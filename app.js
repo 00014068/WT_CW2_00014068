@@ -4,7 +4,7 @@ const app = express()
 app.set('view engine', 'pug')
 
 app.get('/', (req, res) => {
-    res.send('Hello')
+    res.render('index')
 })
 
 app.listen(8000, err => {
