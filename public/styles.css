@@ -65,5 +65,29 @@ a:hover {
     margin-top: 100px;
 }
 
+/*create page*/
+
+.form {
+    max-width: 65%;
+    margin-top: 50px;
+}
+
+.input {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 35px;
+    padding: 10px 0;
+    font-size: 0.8rem;
+    font-family: inherit;
+    color: inherit;
+}
+
+.btn {
+    display: inline-block;
+    border: none;
+    font-size: 0.8rem;
+}
+
 
 
