@@ -19,6 +19,10 @@ app.get('/notes', (req,res) => {
     res.render('notes', {notes:notes})
 })
 
+app.get('/notes/detail', (req,res) => {
+    res.render('detail')
+})
+
 app.listen(8000, err => { 
     if (err) console.log(err)
 

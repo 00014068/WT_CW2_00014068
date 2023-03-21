@@ -90,7 +90,7 @@ a:hover {
     font-size: 0.8rem;
 }
 
-/*notes list*/
+/*notes page*/
 
 .title {
     margin-top: 40px;
@@ -110,5 +110,9 @@ a:hover {
     font-size: 0.8rem;
 }
 
+/*detail page*/
 
+.description {
+    margin-top: 20px;
+}
 
