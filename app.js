@@ -13,6 +13,12 @@ app.get('/create', (req, res) => {
     res.render('create')
 })
 
+const notes = ['Title 1', 'Title 2']
+
+app.get('/notes', (req,res) => {
+    res.render('notes', {notes:notes})
+})
+
 app.listen(8000, err => { 
     if (err) console.log(err)
 
