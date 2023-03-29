@@ -43,10 +43,14 @@ app.post('/create', (req,res) => {
     }
 })
 
-const notes = ['Title 1', 'Title 2']
-
 app.get('/notes', (req,res) => {
-    res.render('notes', {notes:notes})
+    fs.readFile('./data/notes.json', (err, data) => {
+        if (err) throw err
+
+        const notes = JSON.parse(data)
+        
+        res.render('notes', {notes:notes})
+    })
 })
 
 app.get('/notes/detail', (req,res) => {
