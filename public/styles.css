@@ -116,3 +116,18 @@ a:hover {
     margin-top: 20px;
 }
 
+.error {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid red;
+    color: red ;
+    margin-top: 15px;
+}
+
+.success {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid green;
+    color: green ;
+    margin-top: 15px;
+}

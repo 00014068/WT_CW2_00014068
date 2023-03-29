@@ -3,6 +3,13 @@ extends layout.pug
 block content 
     .container
         h1 Create a note
+
+        if error 
+            p.error There ia an error! Please, try again!
+
+        if success 
+            p.success Note is successfully created!
+
         form.form(action="/create" method='post')
             label Title 
             input.input(type="text" name='title')
