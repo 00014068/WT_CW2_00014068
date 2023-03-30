@@ -20,7 +20,7 @@ app.post('/create', (req,res) => {
     const title = req.body.title
     const description = req.body.description
 
-    if (title.trim() === '' && description.trim() === '') {
+    if (title.trim() === '' || description.trim() === '') {
         res.render('create', { error: true })
     } else {
         fs.readFile('./data/notes.json', ( err, data) => {
@@ -48,13 +48,25 @@ app.get('/notes', (req,res) => {
         if (err) throw err
 
         const notes = JSON.parse(data)
-        
-        res.render('notes', {notes:notes})
+
+        res.render('notes', { notes: notes })
     })
 })
 
-app.get('/notes/detail', (req,res) => {
-    res.render('detail')
+app.get('/notes/:id', (req,res) => {
+    const id = req.params.id
+
+    fs.readFile('./data/notes.json', (err, data) => {
+        if (err) throw err 
+
+        const notes = JSON.parse(data)
+
+        const note = notes.filter(note => note.id == id)[0]
+
+        res.render('detail', { note: note })
+
+    })
+    
 })
 
 app.post('/create', (req, res) => {

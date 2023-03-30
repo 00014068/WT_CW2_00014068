@@ -6,5 +6,5 @@ block content
 
         each note in notes 
             .note-wrapper 
-                a.note(href=`/notes/detail${ notes.id }`)= note.title
+                a.note(href=`/notes/${ note.id }`) #{ note.title }
                 a.featured.delete(href="#") Delete
