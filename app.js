@@ -64,14 +64,25 @@ app.get('/notes/:id', (req,res) => {
         const note = notes.filter(note => note.id == id)[0]
 
         res.render('detail', { note: note })
-
     })
-    
 })
 
-app.post('/create', (req, res) => {
-    console.log
-    res.render('create')
+app.get('/:id/delete', (req, res) => {
+    const id = req.params.id
+
+    fs.readFile('./data/notes.json', (err, data) => {
+        if (err) throw err
+
+        const notes = JSON.parse(data)
+
+        const notesFiltered = notes.filter(note => note.id != id)
+
+        fs.writeFile('./data/notes.json', JSON.stringify(notesFiltered), (err) => {
+            if (err) throw err
+
+            res.render('notes', { notes: notesFiltered, delete: true })
+        })
+    })
 })
 
 app.listen(8000, err => { 

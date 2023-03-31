@@ -1,10 +1,12 @@
 extends layout.pug 
 
 block content
+
     .container 
+
         h1.title All notes
 
         each note in notes 
             .note-wrapper 
                 a.note(href=`/notes/${ note.id }`) #{ note.title }
-                a.featured.delete(href="#") Delete
+                a.featured.delete(href=`/${ note.id }/delete`) Delete
