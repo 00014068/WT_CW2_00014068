@@ -1,0 +1,13 @@
+extends layout.pug 
+
+block content 
+    .container 
+        form.form(action=`/notes/${note.id}/edit` method='POST')
+            label Title 
+            input.input(type='text' name='title' value=`${note.title}`)
+
+
+            label Description
+            textarea.input(name='description') #{ note.description }
+
+            button.featured.btn(type='submit') Update a note
