@@ -132,3 +132,9 @@ a:hover {
     color: green ;
     margin-top: 15px;
 }
+
+.detail-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
