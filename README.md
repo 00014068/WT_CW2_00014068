@@ -26,3 +26,4 @@ node app
 
 ### Repository on Github of web application
 [link for the repository](https://github.com/00014068/WT_CW2_00014068.git)
+[link for the hosted application](https://luxuriant-spring-wrench.glitch.me/)
