@@ -44,6 +44,16 @@ app.post('/create', (req,res) => {
     }
 })
 
+app.get('/api/v1/notes', (req, res) => {
+    fs.readFile('./data/notes.json', (err, data) => {
+        if (err) throw err
+
+        const notes = JSON.parse(data)
+
+        res.json(notes)
+    })
+})
+
 app.get('/notes', (req,res) => {
     fs.readFile('./data/notes.json', (err, data) => {
         if (err) throw err
